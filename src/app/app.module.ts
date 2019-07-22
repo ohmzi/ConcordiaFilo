@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   entryComponents: [],
   // tslint:disable-next-line: max-line-length
   imports: [
+    HttpModule,
     BrowserModule,
     HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     BrowserAnimationsModule, AngularFireModule.initializeApp(firebaseConfig), AngularFireAuthModule],
