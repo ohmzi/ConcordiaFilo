@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import firebaseConfig from './firebase';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

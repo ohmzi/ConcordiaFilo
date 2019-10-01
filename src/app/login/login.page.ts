@@ -13,9 +13,11 @@ export class LoginPage implements OnInit {
 
 	username = '';
 	password = '';
+	usernameIsWrong = false;
+	passwordIsWrong=false;
 
 	constructor(public afAuth: AngularFireAuth, // public user: UserService,
-		           public router: Router) { }
+		public router: Router) { }
 
 	ngOnInit() {
 	}
@@ -32,14 +34,25 @@ export class LoginPage implements OnInit {
 					this.router.navigate(['/tabs']);
 				}
 				*/
+			if (res.user) {
+				console.log('User Logged in');
+				this.usernameIsWrong = false;
+				this.passwordIsWrong = false;
+				this.router.navigate(['/tabs']);
+
+			}
 
 
 		} catch (err) {
-			console.dir(err);
+			//console.dir(err);
+			if (err.code =='auth/wrong-password'){
+				console.log('Password is wrong');
+				this.passwordIsWrong = true;
+			}
 			if (err.code === 'auth/user-not-found') {
 				console.log('User not found');
+				this.usernameIsWrong = true;
 			} else {
-
 			}
 		}
 	}

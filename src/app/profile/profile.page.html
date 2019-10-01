@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Profile</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title>Search</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar (animated)="true" (ionInput)="FilterJSONData($event)" (ionCancel)="onCancel($event)" (autocomplete)="on($event)">
+  </ion-searchbar>
+  <div class="ion-padding">
+    <ion-list *ngIf="isItemAvailable">
+      <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{item}}
+        {{item.name}}
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>
