@@ -1,19 +1,22 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="danger">
     <ion-title>Search</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (animated)="true" (ionInput)="FilterJSONData($event)" (ionCancel)="onCancel($event)" (autocomplete)="on($event)">
-  </ion-searchbar>
+ 
+  <ion-searchbar animated placeholder="Filter Schedules"  (ionInput)="FilterJSONData($event)"
+  (ionCancel)="onCancel($event)" (autocomplete)="on($event)" color="dark">></ion-searchbar>
+
   <div class="ion-padding">
     <ion-list *ngIf="isItemAvailable">
-      <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{item}}
+      <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">
         {{item.name}}
       </ion-item>
     </ion-list>
   </div>
+  
 
 </ion-content>

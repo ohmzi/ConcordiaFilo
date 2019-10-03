@@ -14,15 +14,15 @@
 		<ion-card-content>
 			<ion-item>
 				<ion-label position="floating">Username</ion-label>
-				<ion-input  (ionChange)="usernameIsWrong=false" type="text" [(ngModel)]="username" required></ion-input>
+				<ion-input (ionChange)="usernameIsWrong=false" type="text" [(ngModel)]="username" required></ion-input>
 			</ion-item>
-			<ion-label color="danger" *ngIf="usernameIsWrong">
-				<ion-icon name="alert"></ion-icon> Username doesn't exist!
-			</ion-label>
-
+				<ion-label color="danger" *ngIf="invalidEmail">
+					<ion-icon name="alert"></ion-icon> {{messageForEmail}}
+				</ion-label>
 			<ion-item>
 				<ion-label position="floating">Password</ion-label>
-				<ion-input (ionChange)="passwordIsWrong=false"  type="password" [(ngModel)]="password" required></ion-input>
+				<ion-input (ionChange)="passwordIsWrong=false" type="password" [(ngModel)]="password" required>
+				</ion-input>
 			</ion-item>
 			<ion-label color="danger" *ngIf="passwordIsWrong">
 				<ion-icon name="alert"></ion-icon> Wrong password. Try again!

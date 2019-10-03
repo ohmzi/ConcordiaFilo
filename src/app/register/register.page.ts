@@ -15,7 +15,10 @@ export class RegisterPage implements OnInit {
   password = '';
   password2 = '';
   idExists = false;
-  passwordNotMatch = false;
+  passwordIssue = false;
+  messageForEmail = '';
+  messageForPwd = '';
+
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -28,25 +31,54 @@ export class RegisterPage implements OnInit {
 
   async signup() {
     const { username, password, password2 } = this;
-    try {
-      if (password != password2) {
-        //this.showAlert('Error!', 'Passwords don\'t match');
-        this.passwordNotMatch = true;
-        return console.error('Unmatching Passwords');
-      }
-      const res = await this.afAuth.auth.createUserWithEmailAndPassword(username, password);
-      // console.error(res);
-      //this.showAlert('Success!', 'Welcome aboard!');
-      this.router.navigate(['/tabs']);
-      return console.error('User Created!');
-    } catch (error) {
 
-      if (error.code == 'auth/email-already-in-use') {
-        //console.log('Email already exists');
-        this.idExists = true;
+    if (/(.+)@(.+){2,}\.(.+){2,}/.test(username)) {
+      //console.log('Valid email');
+
+      if (password.match(/[a-z]/g) && password.match(
+        //console.log('Valid Password');
+        /[A-Z]/g) && password.match(
+          /[0-9]/g) && password.match(
+            /[^a-zA-Z\d]/g) && password.length >= 8) {
+
+        try {
+
+          if (password != password2) {
+            //console.log('Passwords don\'t match');
+            //this.showAlert('Error!', 'Passwords don\'t match');
+            this.passwordIssue = true;
+            this.messageForPwd = 'Passwords do not match';
+            return console.error('Unmatching Passwords');
+          }
+          const res = await this.afAuth.auth.createUserWithEmailAndPassword(username, password);
+          // console.error(res);
+          //this.showAlert('Success!', 'Welcome aboard!');
+          this.router.navigate(['/tabs']);
+          return console.error('User Created!');
+        } catch (error) {
+
+          if (error.code == 'auth/email-already-in-use') {
+            //console.log('Email already exists');
+            this.idExists = true;
+            this.messageForEmail = 'Email already taken!';
+
+          }
+          //console.dir(error);
+          //this.showAlert('Error', error.message);
+        }
       }
-      //console.dir(error);
-      //this.showAlert('Error', error.message);
+      else {
+        //console.log('Invalid Passwords');
+        this.passwordIssue = true;
+        this.messageForPwd = 'At least each of uppercase, lowercase, digit, special character. Minimum 8 characters.';
+      }
+    }
+    else {
+      //console.log('Invalid email');
+      this.passwordIssue = false;
+      this.idExists = true;
+      this.messageForEmail = 'Invalid Email';
+
     }
   }
 

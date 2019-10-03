@@ -14,7 +14,9 @@ export class LoginPage implements OnInit {
 	username = '';
 	password = '';
 	usernameIsWrong = false;
-	passwordIsWrong=false;
+	passwordIsWrong = false;
+	invalidEmail = false;
+	messageForEmail = '';
 
 	constructor(public afAuth: AngularFireAuth, // public user: UserService,
 		public router: Router) { }
@@ -24,37 +26,45 @@ export class LoginPage implements OnInit {
 
 	async login() {
 		const { username, password } = this;
-		try {
-			const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
-			/*	if (res.user) {
-					this.user.setUser({
-						username,
-						uid: res.user.uid
-					});
+
+		//Checking if email is correct
+		if (/(.+)@(.+){2,}\.(.+){2,}/.test(username)) {
+			//console.log('Valid email');
+			this.invalidEmail = false;
+			//Sending email to Firebase authentication 
+			try {
+				const res = await this.afAuth.auth.signInWithEmailAndPassword(username, password);
+				if (res.user) {
+					//console.log('User Logged in');
+					this.usernameIsWrong = false;
+					this.passwordIsWrong = false;
 					this.router.navigate(['/tabs']);
 				}
-				*/
-			if (res.user) {
-				console.log('User Logged in');
-				this.usernameIsWrong = false;
-				this.passwordIsWrong = false;
-				this.router.navigate(['/tabs']);
 
-			}
+			} catch (err) {
+				//console.dir(err);
+				if (err.code == 'auth/wrong-password') {
+					//	console.log('Password is wrong');
+					this.passwordIsWrong = true;
+				}
+				if (err.code === 'auth/user-not-found') {
+					//console.log('User not found');
+					this.invalidEmail = true;
+					this.messageForEmail = 'User not found';
+				} else {
+					this.invalidEmail = false;
 
-
-		} catch (err) {
-			//console.dir(err);
-			if (err.code =='auth/wrong-password'){
-				console.log('Password is wrong');
-				this.passwordIsWrong = true;
-			}
-			if (err.code === 'auth/user-not-found') {
-				console.log('User not found');
-				this.usernameIsWrong = true;
-			} else {
+				}
 			}
 		}
+		else {
+			//console.log('Invalid email');
+			this.invalidEmail = true;
+			this.messageForEmail = 'Invalid Email';
+
+		}
+
+
 	}
 
 }
