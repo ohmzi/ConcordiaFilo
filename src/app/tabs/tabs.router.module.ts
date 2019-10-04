@@ -8,9 +8,9 @@ const routes: Routes = [
         path: '',
         component: TabsPage,
         children: [
-            { path: 'feed', loadChildren: '../feed/feed.module#FeedPageModule' },
-            { path: 'uploader', loadChildren: '../uploader/uploader.module#UploaderPageModule' },
-            { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' }
+            { path: 'feed', loadChildren: () => import('../feed/feed.module').then(m => m.FeedPageModule) },
+            { path: 'uploader', loadChildren: () => import('../uploader/uploader.module').then(m => m.UploaderPageModule) },
+            { path: 'profile', loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule) }
         ]
     }
 ];

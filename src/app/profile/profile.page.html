@@ -6,9 +6,9 @@
 </ion-header>
 
 <ion-content>
- 
-  <ion-searchbar animated placeholder="Filter Schedules"  (ionInput)="FilterJSONData($event)"
-  (ionCancel)="onCancel($event)" (autocomplete)="on($event)" color="dark">></ion-searchbar>
+
+  <ion-searchbar animated placeholder="Filter Schedules" (ionInput)="FilterJSONData($event)"
+    (ionCancel)="onCancel($event)" (autocomplete)="on($event)" color="dark">></ion-searchbar>
 
   <div class="ion-padding">
     <ion-list *ngIf="isItemAvailable">
@@ -17,6 +17,6 @@
       </ion-item>
     </ion-list>
   </div>
-  
+
 
 </ion-content>

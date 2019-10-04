@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
   jsonData: any = [];
-  constructor() {
+  constructor(public router: Router) {
     this.intitializeJSONData();
 
   }
@@ -28,7 +29,10 @@ export class ProfilePage implements OnInit {
     }
   }
   selectVal(val) {
-    alert("you have selected = " + val);
+    //alert("you have selected = " + val);
+    this.router.navigate(['/'+val]);
+
+
   }
   isItemAvailable = false;
 
@@ -45,6 +49,22 @@ export class ProfilePage implements OnInit {
       {
         "name": "USA",
         "code": "US"
+      },
+      {
+        "name": "adijsandon",
+        "code": "Omvsfd"
+      },
+      {
+        "name": "Omjythgfan",
+        "code": "Oloikukm"
+      },
+      {
+        "name": "Omwertyuan",
+        "code": "Onbvcm"
+      },
+      {
+        "name": "Ompoiuyan",
+        "code": "lkjOm"
       }];
 
   }

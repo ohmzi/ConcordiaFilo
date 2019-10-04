@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -17,7 +16,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   entryComponents: [],
   // tslint:disable-next-line: max-line-length
   imports: [
-    HttpModule,
     BrowserModule,
     HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     BrowserAnimationsModule, AngularFireModule.initializeApp(firebaseConfig), AngularFireAuthModule],
