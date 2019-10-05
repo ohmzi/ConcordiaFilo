@@ -1,22 +1,15 @@
 <ion-header>
-  <ion-toolbar color="danger">
-    <ion-title>Search</ion-title>
-
-  </ion-toolbar>
+    <ion-toolbar color="danger">
+        <ion-title>Search</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-searchbar animated placeholder="Filter Schedules" (ionInput)="FilterJSONData($event)"
-    (ionCancel)="onCancel($event)" (autocomplete)="on($event)" color="dark">></ion-searchbar>
-
-  <div class="ion-padding">
+    <ion-searchbar class="ion-searchbar" animated placeholder="Course Name" (ionInput)="FilterJSONData($event)" (ionCancel)="onCancel($event)" (autocomplete)="on($event)" color="dark">></ion-searchbar>
     <ion-list *ngIf="isItemAvailable">
-      <ion-item (click)="selectVal(item.name)" *ngFor="let item of jsonData">
-        {{item.name}}
-      </ion-item>
+        <ion-item colour="success" (click)="selectVal(item.name)" *ngFor="let item of jsonData">
+            {{item.name}}
+        </ion-item>
     </ion-list>
-  </div>
-
 
 </ion-content>

@@ -1,5 +1,5 @@
 <ion-header>
-	<ion-toolbar>
+	<ion-toolbar color="dark">
 		<ion-title>Login</ion-title>
 	</ion-toolbar>
 </ion-header>
@@ -16,9 +16,9 @@
 				<ion-label position="floating">Username</ion-label>
 				<ion-input (ionChange)="usernameIsWrong=false" type="text" [(ngModel)]="username" required></ion-input>
 			</ion-item>
-				<ion-label color="danger" *ngIf="invalidEmail">
-					<ion-icon name="alert"></ion-icon> {{messageForEmail}}
-				</ion-label>
+			<ion-label color="danger" *ngIf="invalidEmail">
+				<ion-icon name="alert"></ion-icon> {{messageForEmail}}
+			</ion-label>
 			<ion-item>
 				<ion-label position="floating">Password</ion-label>
 				<ion-input (ionChange)="passwordIsWrong=false" type="password" [(ngModel)]="password" required>

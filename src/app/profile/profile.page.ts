@@ -29,7 +29,7 @@ export class ProfilePage implements OnInit {
     }
   }
   selectVal(val) {
-    //alert("you have selected = " + val);
+    alert("you have selected = " + val);
     this.router.navigate(['/'+val]);
 
 

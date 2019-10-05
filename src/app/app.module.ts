@@ -11,6 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import firebaseConfig from './firebase';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { File } from '@ionic-native/File/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,7 +27,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    File,
+    FileOpener,
+    FileTransfer,
+    DocumentViewer
   ],
   bootstrap: [AppComponent]
 })

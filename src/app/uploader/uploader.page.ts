@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient }    from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-uploader',
@@ -24,8 +24,16 @@ export class UploaderPage implements OnInit {
     data.append('UPLOADCARE_STORE', '1');
     data.append('UPLOADCARE_PUB_KEY', '85b3797afd60570be745');
     console.log(files);
-   // this.http.post('https://upload.uploadcare.com/base/',
-     //  data).subscribe(event => { console.log(event)
-       //                          this.imageURL = event.json().file; });
+    
+    /*
+     
+    this.http.post('https://upload.uploadcare.com/base/',
+      data).subscribe(event => {
+        console.log(event);
+        this.imageURL = event.file;
+      }
+      );
+*/
+   
   }
 }
