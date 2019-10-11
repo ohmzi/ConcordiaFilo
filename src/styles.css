@@ -4,7 +4,6 @@ input.ng-touched.ng-invalid {
     border-color: #dc3545;
 }
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
 div.validation-error {
     width: 100%;
     margin-top: .25rem;

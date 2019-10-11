@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { OmanPage } from './oman.page';
-import { HTTP } from '@ionic-native/http/ngx';
 
 const routes: Routes = [
   {
@@ -16,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [HTTP,
+  imports: [
     CommonModule,
    // FormsModule,
     IonicModule,
