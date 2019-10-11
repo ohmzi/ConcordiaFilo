@@ -3,13 +3,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import firebaseConfig from './firebase';
+import {environment} from '../environments/environment';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { File } from '@ionic-native/File/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
@@ -23,11 +27,14 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
   imports: [
     BrowserModule,
     HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    BrowserAnimationsModule, AngularFireModule.initializeApp(firebaseConfig), AngularFireAuthModule],
+    BrowserAnimationsModule,     
+   AngularFireModule.initializeApp(environment.firebase)
+    , AngularFireAuthModule, AngularFireStorageModule],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    HTTP,
     File,
     FileOpener,
     FileTransfer,

@@ -1,17 +1,17 @@
 <ion-header>
     <ion-toolbar color="tertiary">
-        <ion-title>Upload Images</ion-title>
-  </ion-toolbar>
+        <ion-title class="ion-text-center">Upload Care storage</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content text-center class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-input type="file" (change)="fileChanged($event)"></ion-input>>
-        <img *ngIf="imageURL" src="https://ucarecdn.com/{{ imageURL }}/" />
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-input type="file" (change)="fileChanged($event)"></ion-input>>
+                <img *ngIf="imageURL" src="https://ucarecdn.com/{{ imageURL }}/" />
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

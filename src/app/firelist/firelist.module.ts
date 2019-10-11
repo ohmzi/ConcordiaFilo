@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { OmanPage } from './oman.page';
-import { HTTP } from '@ionic-native/http/ngx';
+import { FirelistPage } from './firelist.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: OmanPage
+    component: FirelistPage
   }
 ];
 
 @NgModule({
-  imports: [HTTP,
+  imports: [
     CommonModule,
-   // FormsModule,
+    FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [OmanPage]
+  declarations: [FirelistPage]
 })
-export class OmanPageModule {}
+export class FirelistPageModule {}

@@ -5,6 +5,15 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-    <ion-button expand="full" (click)="openLocalPdf()">Open Local Pdf</ion-button>
-    <ion-button expand="full" (click)="downloadAndOpenPdf()">Download and Open Pdf</ion-button>
+    <ion-button expand="block" (click)="openLocalPdf()">Open Local Pdf</ion-button>
+    <ion-button expand="block" (click)="downloadAndOpenPdf()">Download and Open Pdf</ion-button>
+    <ion-button expand="block" (click)="getDataStandard()">getDataStandard</ion-button>
+    <ion-button expand="block" (click)="getDataNativeHttp()">getDataNatively</ion-button>
+    <ion-button expand="block" (click)="getDataEverywhere()">getDataEverywhere</ion-button>
+    <ion-list>
+        <ion-item button detail lines="insert" *ngFor="let film of data">
+            {{film.title}}
+        </ion-item>
+    </ion-list>
+
 </ion-content>
