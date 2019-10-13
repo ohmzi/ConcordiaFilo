@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule) },
   { path: 'tabs', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
   { path: 'firelist', loadChildren: './firelist/firelist.module#FirelistPageModule' },
+  { path: 'oman', loadChildren: './oman/oman.module#OmanPageModule' },
   ];
 
 @NgModule({

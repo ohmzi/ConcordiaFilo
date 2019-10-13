@@ -35,7 +35,7 @@ import { DetailsUploadComponent } from "./upload/details-upload/details-upload.c
     DetailsUploadComponent
   ],
   entryComponents: [],
-
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -57,7 +57,6 @@ import { DetailsUploadComponent } from "./upload/details-upload/details-upload.c
     FileOpener,
     FileTransfer,
     DocumentViewer
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule {}
