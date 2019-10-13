@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { HTTP } from '@ionic-native/http/ngx';
-
-import { AngularFireModule } from '@angular/fire';
-import {environment} from '../../environments/environment';
+import { Component, OnInit } from "@angular/core";
+import { HTTP } from "@ionic-native/http/ngx";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../../environments/environment";
+import { AngularFireStorage } from "@angular/fire/storage";
 
 @Component({
-  selector: 'app-firelist',
-  templateUrl: './firelist.page.html',
-  styleUrls: ['./firelist.page.scss'],
+  selector: "app-firelist",
+  templateUrl: "./firelist.page.html",
+  styleUrls: ["./firelist.page.scss"]
 })
 export class FirelistPage implements OnInit {
-  constructor(private nativeHttp: HTTP) { }
+  constructor(private nativeHttp: HTTP, private storage: AngularFireStorage) {}
 
-
-  ngOnInit() {
+  ngOnInit() {}
+  getDataNative() {
+    
   }
 
-
-/*
+  /*
   getDataNative() {// Create a reference under which you want to list
     var storage = firebaseConfig.storage();
     var storageRef = storage.ref();
@@ -37,5 +37,4 @@ export class FirelistPage implements OnInit {
       // Uh-oh, an error occurred!
     });
   }*/
-
 }
