@@ -23,16 +23,12 @@ import { FileOpener } from "@ionic-native/file-opener/ngx";
 import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
-import { FormUploadComponent } from "./upload/form-upload/form-upload.component";
-import { ListUploadComponent } from "./upload/list-upload/list-upload.component";
-import { DetailsUploadComponent } from "./upload/details-upload/details-upload.component";
+import { StoreModule } from './store/store.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormUploadComponent,
-    ListUploadComponent,
-    DetailsUploadComponent
+    AppComponent
   ],
   entryComponents: [],
   bootstrap: [AppComponent],
@@ -46,7 +42,8 @@ import { DetailsUploadComponent } from "./upload/details-upload/details-upload.c
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    StoreModule,
   ],
   providers: [
     StatusBar,

@@ -1,15 +1,17 @@
 <ion-header>
-    <ion-toolbar color="warning">
-        <ion-title class="ion-text-center">Omans</ion-title>
+    <ion-toolbar>
+        <ion-title>{{course.name}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-    <div>
+    <div class="container" style="width:400px">
+
         <app-form-upload></app-form-upload>
+
         <br />
         <br />
+
         <app-list-upload></app-list-upload>
     </div>
 </ion-content>

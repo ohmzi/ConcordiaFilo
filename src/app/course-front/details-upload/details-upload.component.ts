@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FileUpload } from '../fileupload';
-import { UploadFileService } from '../upload-file.service';
+import { CourseFrontPage } from '../course-front.page';
 
 @Component({
   selector: 'app-details-upload',
@@ -11,7 +11,7 @@ export class DetailsUploadComponent implements OnInit {
 
   @Input() fileUpload: FileUpload;
 
-  constructor(private uploadService: UploadFileService) { }
+  constructor(private uploadService: CourseFrontPage) { }
 
   ngOnInit() {
   }
