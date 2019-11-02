@@ -40,7 +40,7 @@ export class LoginPage implements OnInit {
           //console.log('User Logged in');
           this.usernameIsWrong = false;
           this.passwordIsWrong = false;
-          this.router.navigate(["/tabs"]);
+          this.router.navigate(["/admin-control"]);
         }
       } catch (err) {
         //console.dir(err);

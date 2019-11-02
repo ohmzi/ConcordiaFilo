@@ -1,16 +1,17 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>{{course.name}}</ion-title>
+        <ion-title>Admin Controlling </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div class="container" style="width:400px">
 
+        <app-form-upload></app-form-upload>
 
         <br />
         <br />
 
-        <app-list-upload [pageName]=course.name></app-list-upload>
+        <app-list-upload [pageName]="name"></app-list-upload>
     </div>
 </ion-content>

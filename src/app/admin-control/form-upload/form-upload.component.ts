@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseFrontPage } from '../course-front.page';
+import {AdminControlPage  } from '../../admin-control/admin-control.page';
 import { FileUpload } from '../fileupload';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,7 @@ export class FormUploadComponent implements OnInit {
   currentFileUpload: FileUpload;
   percentage: number;
 
-  constructor(private uploadService: CourseFrontPage) { }
+  constructor(private uploadService: AdminControlPage) { }
 
   ngOnInit() {
   }

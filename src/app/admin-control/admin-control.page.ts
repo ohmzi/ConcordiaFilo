@@ -3,7 +3,8 @@ import { UploadFileService } from "../upload/upload-file.service";
 import { ProfilePage } from "../profile/profile.page";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '../store/store';
-import { ListUploadComponent } from './list-upload/list-upload.component';
+import { FormUploadComponent } from '../admin-control/form-upload/form-upload.component';
+import { ListUploadComponent } from '../admin-control/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './details-upload/details-upload.component';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -16,11 +17,14 @@ import { finalize } from 'rxjs/operators';
   providedIn: "root"
 })
 @Component({
-  selector: "app-course-front",
-  templateUrl: "./course-front.page.html",
-  styleUrls: ["./course-front.page.scss"],
+  selector: 'app-admin-control',
+  templateUrl: './admin-control.page.html',
+  styleUrls: ['./admin-control.page.scss'],
 })
-export class CourseFrontPage {
+export class AdminControlPage {
+
+
+
 
   course: any;
 
@@ -31,10 +35,18 @@ export class CourseFrontPage {
     private db: AngularFireDatabase, private storage: AngularFireStorage
   ) {
    // debugger;
-    this.course = this._store.course;
+    //this.course = this._store.course;
 
     //course.name
 
+    //upload-file.service is where all the needed code is. get .ts code from there and find the html code from component
+    
+ 
+ 
+ 
+
+    
+ 
   }
 
   private basePath = '/uploads';
@@ -84,5 +96,4 @@ export class CourseFrontPage {
       const storageRef = this.storage.ref(this.basePath);
       storageRef.child(name).delete();
     }
- 
 }

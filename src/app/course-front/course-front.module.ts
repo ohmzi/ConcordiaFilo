@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
-import { FormUploadComponent } from "./form-upload/form-upload.component";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
 import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 
@@ -21,7 +20,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     CourseFrontPage,
-    FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent
   ],

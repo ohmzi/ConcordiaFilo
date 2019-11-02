@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'firelist', loadChildren: './firelist/firelist.module#FirelistPageModule' },
  // { path: 'oman', loadChildren: './oman/oman.module#OmanPageModule' },
   { path: 'course-front', loadChildren: () => import('./course-front/course-front.module').then(m => m.CourseFrontPageModule) },
+  { path: 'admin-control', loadChildren: './admin-control/admin-control.module#AdminControlPageModule' },
   ];
 
 @NgModule({

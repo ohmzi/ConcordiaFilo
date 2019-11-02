@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { CourseFrontPage } from '../course-front.page';
+import { AdminControlPage } from '../../admin-control/admin-control.page';
 
 @Component({
   selector: 'app-list-upload',
@@ -13,7 +13,7 @@ export class ListUploadComponent implements OnInit {
 
   fileUploads: any[];
 
-  constructor(private uploadService: CourseFrontPage) { }
+  constructor(private uploadService: AdminControlPage) { }
 
   ngOnInit() {
     // Use snapshotChanges().pipe(map()) to store the key
