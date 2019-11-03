@@ -7,8 +7,10 @@ export interface Course {
 @Injectable({ providedIn: "root" })
 export class Store {
   course: Course = null;
+  url: String;
+
 
   constructor() {
-      console.count('instantiated store');
+  //    console.count('instantiated store');
   }
 }

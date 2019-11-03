@@ -13,13 +13,11 @@ export class FirelistPage implements OnInit {
   constructor(private nativeHttp: HTTP, private storage: AngularFireStorage) {}
 
   ngOnInit() {}
-  getDataNative() {
-    
-  }
+ 
 
-  /*
+  
   getDataNative() {// Create a reference under which you want to list
-    var storage = firebaseConfig.storage();
+    var storage = storage.storage();
     var storageRef = storage.ref();
 
     var listRef = storageRef.child('images');
@@ -36,5 +34,5 @@ export class FirelistPage implements OnInit {
     }).catch(function (error) {
       // Uh-oh, an error occurred!
     });
-  }*/
+  }
 }

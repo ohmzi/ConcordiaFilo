@@ -4,8 +4,6 @@ import { ProfilePage } from "../profile/profile.page";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '../store/store';
 import { FormUploadComponent } from '../admin-control/form-upload/form-upload.component';
-import { ListUploadComponent } from '../admin-control/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './details-upload/details-upload.component';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
 

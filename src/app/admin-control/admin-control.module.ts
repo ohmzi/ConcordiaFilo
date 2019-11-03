@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { FormUploadComponent } from "../admin-control/form-upload/form-upload.component";
-import { ListUploadComponent } from "../admin-control/list-upload/list-upload.component";
-import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 
 import { IonicModule } from '@ionic/angular';
 
@@ -26,8 +24,6 @@ const routes: Routes = [
   ],
   declarations: [AdminControlPage,
     FormUploadComponent,
-    ListUploadComponent,
-    DetailsUploadComponent
   ]
 })
 export class AdminControlPageModule {}

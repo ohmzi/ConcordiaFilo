@@ -6,12 +6,12 @@
 
 <ion-content>
     <div class="container" style="width:400px">
-
-        <app-form-upload></app-form-upload>
-
-        <br />
-        <br />
-
-        <app-list-upload [pageName]="name"></app-list-upload>
+        <ion-card>
+            <app-form-upload></app-form-upload>
+        </ion-card>
     </div>
 </ion-content>
+<ion-card>
+    <ion-item>
+        <a routerLink="/profile">home</a></ion-item>
+</ion-card>
