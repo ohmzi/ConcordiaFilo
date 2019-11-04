@@ -36,13 +36,14 @@ export class DetailsUploadComponent implements OnInit {
 
   ngOnInit() {}
 
+
   selectVal(courseSelection) {
     console.log("URL IN PDF PAGE IS " + courseSelection);
-    //let downloadUrl = "https://devdactic.com/html/5-simple-hacks-LBT.pdf";
+    let downloadUrl = courseSelection;
     let path = this.file.dataDirectory;
     const transfer = this.ft.create();
 
-    transfer.download(courseSelection, path + "myfile.pdf").then(entry => {
+    transfer.download(downloadUrl, path + "myfile.pdf").then(entry => {
       let url = entry.toURL();
 
       if (this.platform.is("ios")) {

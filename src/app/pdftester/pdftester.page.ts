@@ -93,6 +93,5 @@ export class PdftesterPage implements OnInit {
   }
 
   ngOnInit() {
-
   }
 }
