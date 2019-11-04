@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-title>Search</ion-title>
+    </ion-toolbar>
+    <ion-button color="red">
+        <a routerLink="/login">Admin</a>
+    </ion-button>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar class="ion-searchbar" animated placeholder="Course Name" (ionInput)="CreateCourseList($event)" ionCancel="onCancel($event)" autocomplete="on($event)" color="dark">></ion-searchbar>
+    <ion-list *ngIf="isItemAvailable">
+        <ion-item colour="success" (click)="selectVal(course.name)" *ngFor="let course of courseList">
+            {{course.name}}
+        </ion-item>
+    </ion-list>
+</ion-content>

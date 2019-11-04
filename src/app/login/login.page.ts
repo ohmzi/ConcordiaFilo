@@ -25,8 +25,6 @@ export class LoginPage implements OnInit {
 
   async login() {
     const { username, password } = this;
-
-    //Checking if email is correct
     if (/(.+)@(.+){2,}\.(.+){2,}/.test(username)) {
       //console.log('Valid email');
       this.invalidEmail = false;
@@ -63,3 +61,5 @@ export class LoginPage implements OnInit {
     }
   }
 }
+
+// alert("you have selected = " + val);

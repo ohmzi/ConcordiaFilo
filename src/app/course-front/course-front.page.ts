@@ -1,12 +1,11 @@
 import { Component, OnInit, Injectable, Input } from "@angular/core";
-import { UploadFileService } from "../upload/upload-file.service";
-import { ProfilePage } from "../profile/profile.page";
+import { SearchPage } from "../search/search.page";
 import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '../store/store';
 import { ListUploadComponent } from './list-upload/list-upload.component';
 import { DetailsUploadComponent } from './details-upload/details-upload.component';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Store} from "../store/store";
 
 import { FileUpload } from './fileupload';
 import { Observable } from 'rxjs';
@@ -25,8 +24,7 @@ export class CourseFrontPage {
   course: any;
 
   constructor(
-    private content: UploadFileService,
-    private profilepage: ProfilePage,
+    private profilepage: SearchPage,
     private readonly _store: Store,
     private db: AngularFireDatabase, private storage: AngularFireStorage
   ) {

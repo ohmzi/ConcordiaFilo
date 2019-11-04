@@ -1,6 +1,4 @@
 import { Component, OnInit, Injectable, Input } from "@angular/core";
-import { UploadFileService } from "../upload/upload-file.service";
-import { ProfilePage } from "../profile/profile.page";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '../store/store';
 import { FormUploadComponent } from '../admin-control/form-upload/form-upload.component';
@@ -27,8 +25,6 @@ export class AdminControlPage {
   course: any;
 
   constructor(
-    private content: UploadFileService,
-    private profilepage: ProfilePage,
     private readonly _store: Store,
     private db: AngularFireDatabase, private storage: AngularFireStorage
   ) {

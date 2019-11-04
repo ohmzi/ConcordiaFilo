@@ -2,11 +2,6 @@ import { AngularFireModule } from "@angular/fire";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpClientModule
-} from "@angular/common/http";
 import { HTTP } from "@ionic-native/http/ngx";
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
@@ -23,13 +18,15 @@ import { FileOpener } from "@ionic-native/file-opener/ngx";
 import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
-import { StoreModule } from './store/store.module';
-
+import { StoreModule } from "./store/store.module";
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpClientModule
+} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   entryComponents: [],
   bootstrap: [AppComponent],
   imports: [
@@ -43,7 +40,7 @@ import { StoreModule } from './store/store.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    StoreModule,
+    StoreModule
   ],
   providers: [
     StatusBar,
