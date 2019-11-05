@@ -10,7 +10,6 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { environment } from "../environments/environment";
-import { AngularFireStorage } from "@angular/fire/storage";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { File } from "@ionic-native/File/ngx";
@@ -20,8 +19,6 @@ import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { StoreModule } from "./store/store.module";
 import {
-  HttpClient,
-  HttpHeaders,
   HttpClientModule
 } from "@angular/common/http";
 
