@@ -1,4 +1,3 @@
-import { store } from "./../../../../../Angular-Tinder/Frontend/src/app/store/store";
 import { Component, OnInit, Input } from "@angular/core";
 import { FileUpload } from "../fileupload";
 import { CourseFrontPage } from "../course-front.page";
@@ -19,6 +18,7 @@ import {
   templateUrl: "./details-upload.component.html",
   styleUrls: ["./details-upload.component.css"]
 })
+
 export class DetailsUploadComponent implements OnInit {
   @Input() fileUpload: FileUpload;
 
@@ -26,7 +26,6 @@ export class DetailsUploadComponent implements OnInit {
     private platform: Platform,
     private document: DocumentViewer,
     private fileOpener: FileOpener,
-
     private ft: FileTransfer,
     private file: File,
     private uploadService: CourseFrontPage,
@@ -38,7 +37,7 @@ export class DetailsUploadComponent implements OnInit {
 
 
   selectVal(courseSelection) {
-  //  console.log("URL IN PDF PAGE IS " + courseSelection);
+    console.log("URL IN PDF PAGE IS " + courseSelection);
     let downloadUrl = courseSelection;
     let path = this.file.dataDirectory;
     const transfer = this.ft.create();

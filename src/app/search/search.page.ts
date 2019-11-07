@@ -37,7 +37,7 @@ export class SearchPage {
     // alert("you have selected = " + val);
     this;
     this.course.name = courseSelection;
-    //console.log("course Name is " + this.course.name);
+    console.log("course Name is " + this.course.name);
     this._store.course = this.course;
     this.router.navigate(["/course-front"]);
   }

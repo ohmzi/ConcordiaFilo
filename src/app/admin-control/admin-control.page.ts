@@ -17,7 +17,7 @@ import { finalize } from "rxjs/operators";
 })
 export class AdminControlPage {
   course: any;
-  private basePath = "/uploads";
+  private basePath = "/Courses/Math 205";
   constructor(
     private readonly _store: Store,
     private db: AngularFireDatabase,

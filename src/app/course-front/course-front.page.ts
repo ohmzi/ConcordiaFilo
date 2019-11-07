@@ -1,11 +1,11 @@
 import { Component, OnInit, Injectable, Input } from "@angular/core";
-import { SearchPage } from "../search/search.page";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Store } from "../store/store";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
 import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { AngularFireStorage } from "@angular/fire/storage";
-import { Store } from "../store/store";
+
 import { FileUpload } from "./fileupload";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
@@ -20,16 +20,16 @@ import { finalize } from "rxjs/operators";
 })
 export class CourseFrontPage {
   course: any;
-  private basePath = "/uploads";
+  private basePath = "";
+
   constructor(
-    private profilepage: SearchPage,
     private readonly _store: Store,
     private db: AngularFireDatabase,
     private storage: AngularFireStorage
   ) {
     // debugger;
     this.course = this._store.course;
-    //course.name
+    this.basePath = "/Courses/" + this.course.name;
   }
   pushFileToStorage(fileUpload: FileUpload): Observable<number> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
