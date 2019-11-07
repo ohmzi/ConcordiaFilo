@@ -1,24 +1,21 @@
-import { Component, OnInit, Injectable } from "@angular/core";
+import { Component, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { CourseFrontPage } from "../course-front/course-front.page";
 import { Store } from "../store/store";
-import {SearchComponentComponent} from "../search-component/search-component.component"
+
 @Injectable({
   providedIn: "root"
 })
+
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.page.html",
-  styleUrls: ["./search.page.scss"]
+  selector: "app-search-component",
+  templateUrl: "./search-component.component.html",
+  styleUrls: ["./search-component.component.scss"]
 })
-export class SearchPage {
+export class SearchComponentComponent {
   isItemAvailable = false;
   course = { name: "as" };
   courseList: any = [];
-  constructor(
-    public router: Router,
-    private readonly _store: Store
-  ) {
+  constructor(public router: Router, private readonly _store: Store) {
     this.intitializeCourseList();
   }
 
@@ -46,19 +43,19 @@ export class SearchPage {
   intitializeCourseList() {
     this.courseList = [
       {
-        name: "Math 203",
+        name: "Math 203"
       },
       {
-        name: "Math 204",
+        name: "Math 204"
       },
       {
-        name: "Math 205",
+        name: "Math 205"
       },
       {
-        name: "Geog 204",
+        name: "Geog 204"
       },
       {
-        name: "Geog 210",
+        name: "Geog 210"
       }
     ];
   }

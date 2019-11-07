@@ -18,6 +18,7 @@ import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { StoreModule } from "./store/store.module";
+import {SearchComponentComponent} from "./search-component/search-component.component"
 import {
   HttpClientModule
 } from "@angular/common/http";
