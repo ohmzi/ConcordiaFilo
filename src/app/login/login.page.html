@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar color="dark">
+    <ion-toolbar color="primary">
         <ion-title>Login</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -27,13 +27,10 @@
                 <ion-icon name="alert"></ion-icon> Wrong password. Try again!
             </ion-label>
         </ion-card-content>
-        <ion-button fill="solid" expand="block" color="danger" (click)="login()">Login</ion-button>
+        <ion-button fill="solid" expand="block" color="success" (click)="login()">Login</ion-button>
     </ion-card>
 
-    <ion-card>
-        <ion-button>
-            <a routerLink="/search">home</a>
-        </ion-button>
-    </ion-card>
+    <ion-button color="dark" routerLink="/">Home
+    </ion-button>
 
 </ion-content>
