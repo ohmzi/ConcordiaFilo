@@ -11,10 +11,9 @@ import { SearchPage } from "../search/search.page";
 })
 export class SearchComponent {
   isItemAvailable = false;
-  course: string;
+  public course: string;
   courseList: any = [];
 
-  public cName: string;
 
   constructor(public router: Router, public _SearchPage: SearchPage) {
     this.intitializeCourseList();
@@ -34,12 +33,14 @@ export class SearchComponent {
   }
   selectVal(courseSelection) {
     // alert("you have selected = " + val);
-    this;
+    
+    
     this.course = courseSelection;
     console.log("SearchComponent's Course Name: ", this.course);
+    this._SearchPage.insertCourseName(this.course);
 
-    this.cName = this.course;
-    this._SearchPage.insertCourseName(this.cName);
+
+
 
     this.router.navigate(["/course-front"]);
   }
