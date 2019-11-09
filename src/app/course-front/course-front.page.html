@@ -1,14 +1,16 @@
 <ion-header>
     <ion-toolbar color="primary">
-        <ion-title>{{course.name}}</ion-title>
+        <ion-title>{{course}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div class="container" style="width:400px">
-        <app-list-upload [pageName]=course.name></app-list-upload>
+        <app-list-upload [pageName]=course></app-list-upload>
     </div>
 </ion-content>
+<ion-title>Empty titlebar: Course name didnt get passed. :( Check logs
+</ion-title>
 
 <ion-button color="dark" routerLink="/">Home
 </ion-button>

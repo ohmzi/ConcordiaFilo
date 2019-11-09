@@ -1,21 +1,22 @@
 import { Component, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { Store } from "../store/store";
-
+import { SearchPage } from "../search/search.page";
 @Injectable({
   providedIn: "root"
 })
-
 @Component({
   selector: "app-search-component",
   templateUrl: "./search-component.component.html",
   styleUrls: ["./search-component.component.scss"]
 })
-export class SearchComponentComponent {
+export class SearchComponent {
   isItemAvailable = false;
-  course = { name: "as" };
+  course: string;
   courseList: any = [];
-  constructor(public router: Router, private readonly _store: Store) {
+
+  public cName: string;
+
+  constructor(public router: Router, public _SearchPage: SearchPage) {
     this.intitializeCourseList();
   }
 
@@ -24,8 +25,8 @@ export class SearchComponentComponent {
     const val = ev.target.value;
     if (val && val.trim() != "") {
       this.isItemAvailable = true;
-      this.courseList = this.courseList.filter(course => {
-        return course.name.toLowerCase().indexOf(val.toLowerCase()) > -1;
+      this.courseList = this.courseList.filter(coursesInList => {
+        return coursesInList.name.toLowerCase().indexOf(val.toLowerCase()) > -1;
       });
     } else {
       this.isItemAvailable = false;
@@ -34,9 +35,12 @@ export class SearchComponentComponent {
   selectVal(courseSelection) {
     // alert("you have selected = " + val);
     this;
-    this.course.name = courseSelection;
-    console.log("course Name is " + this.course.name);
-    this._store.course = this.course;
+    this.course = courseSelection;
+    console.log("SearchComponent's Course Name: ", this.course);
+
+    this.cName = this.course;
+    this._SearchPage.insertCourseName(this.cName);
+
     this.router.navigate(["/course-front"]);
   }
 

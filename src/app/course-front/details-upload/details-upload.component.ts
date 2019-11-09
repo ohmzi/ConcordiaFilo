@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FileUpload } from "../fileupload";
 import { CourseFrontPage } from "../course-front.page";
-import { Store } from "../../store/store";
 import { Router } from "@angular/router";
 import { File } from "@ionic-native/File/ngx";
 import { FileTransfer } from "@ionic-native/file-transfer/ngx";
@@ -18,7 +17,6 @@ import {
   templateUrl: "./details-upload.component.html",
   styleUrls: ["./details-upload.component.css"]
 })
-
 export class DetailsUploadComponent implements OnInit {
   @Input() fileUpload: FileUpload;
 
@@ -29,12 +27,10 @@ export class DetailsUploadComponent implements OnInit {
     private ft: FileTransfer,
     private file: File,
     private uploadService: CourseFrontPage,
-    public router: Router,
-    private readonly _store: Store
+    public router: Router
   ) {}
 
   ngOnInit() {}
-
 
   selectVal(courseSelection) {
     console.log("URL IN PDF PAGE IS " + courseSelection);

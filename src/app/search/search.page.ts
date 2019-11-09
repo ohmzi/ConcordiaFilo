@@ -1,8 +1,9 @@
 import { Component, OnInit, Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { CourseFrontPage } from "../course-front/course-front.page";
-import { Store } from "../store/store";
-import {SearchComponentComponent} from "../search-component/search-component.component"
+import { SearchComponent } from "../search-component/search-component.component";
+import { Observable, Subject } from "rxjs";
+
 @Injectable({
   providedIn: "root"
 })
@@ -12,14 +13,23 @@ import {SearchComponentComponent} from "../search-component/search-component.com
   styleUrls: ["./search.page.scss"]
 })
 export class SearchPage {
+
+  //Observables
+  courseObservable: Observable<any>;
+  private courseSubject = new Subject<any>();
+
   isItemAvailable = false;
-  course = { name: "as" };
+  course: string;
   courseList: any = [];
-  constructor(
-    public router: Router,
-    private readonly _store: Store
-  ) {
+  constructor(public router: Router) {
+    this.courseObservable = this.courseSubject.asObservable();
     this.intitializeCourseList();
+  }
+
+  insertCourseName(cName) {
+    this.courseSubject.next(cName);
+    this.courseSubject.complete();
+    console.log("SearchPage's insertCourseName's Course Name: ", cName);
   }
 
   CreateCourseList(ev: any) {
@@ -37,28 +47,27 @@ export class SearchPage {
   selectVal(courseSelection) {
     // alert("you have selected = " + val);
     this;
-    this.course.name = courseSelection;
-    console.log("course Name is " + this.course.name);
-    this._store.course = this.course;
+    this.course = courseSelection;
+    console.log("course Name is " + this.course);
     this.router.navigate(["/course-front"]);
   }
 
   intitializeCourseList() {
     this.courseList = [
       {
-        name: "Math 203",
+        name: "Math 203"
       },
       {
-        name: "Math 204",
+        name: "Math 204"
       },
       {
-        name: "Math 205",
+        name: "Math 205"
       },
       {
-        name: "Geog 204",
+        name: "Geog 204"
       },
       {
-        name: "Geog 210",
+        name: "Geog 210"
       }
     ];
   }

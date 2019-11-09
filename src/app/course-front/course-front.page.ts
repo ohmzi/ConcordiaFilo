@@ -1,14 +1,13 @@
 import { Component, OnInit, Injectable, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Store } from "../store/store";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
 import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { AngularFireStorage } from "@angular/fire/storage";
-
 import { FileUpload } from "./fileupload";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
+import { SearchPage } from "../search/search.page";
 
 @Injectable({
   providedIn: "root"
@@ -19,17 +18,23 @@ import { finalize } from "rxjs/operators";
   styleUrls: ["./course-front.page.scss"]
 })
 export class CourseFrontPage {
-  course: any;
+  course: string;
   private basePath = "";
 
   constructor(
-    private readonly _store: Store,
     private db: AngularFireDatabase,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private _SearchPage: SearchPage
   ) {
+    //Calling Observable's subscribe method to get course name and insert it here. 
+    this._SearchPage.courseObservable.subscribe(data => {
+      this.course = data;// And he have data here too!
+    });
+    //Checking course name is passing through or undefined 
+    console.log("Course Front Page's Course Name: ", this.course);
+
     // debugger;
-    this.course = this._store.course;
-    this.basePath = "/Courses/" + this.course.name;
+    this.basePath = "/Courses/" + this.course;
   }
   pushFileToStorage(fileUpload: FileUpload): Observable<number> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;

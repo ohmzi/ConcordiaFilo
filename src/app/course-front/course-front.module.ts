@@ -8,7 +8,6 @@ import { DetailsUploadComponent } from "./details-upload/details-upload.componen
 import { IonicModule } from "@ionic/angular";
 
 import { CourseFrontPage } from "./course-front.page";
-import { StoreModule } from "../store/store.module";
 
 const routes: Routes = [
   {
