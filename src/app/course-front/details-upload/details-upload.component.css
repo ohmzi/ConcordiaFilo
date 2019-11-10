@@ -1,0 +1,27 @@
+@media (prefers-color-scheme: light) {
+    ion-toolbar {
+        --background: white;
+        color: black;
+    }
+    .verticalScrollContainer {
+        background: white;
+    }
+    ion-list {
+        --background: black;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    ion-toolbar {
+        --background: black;
+        color: white;
+    }
+    ion-list {
+        --background: black;
+        color: white;
+    }
+    .verticalScrollContainer {
+        background: black;
+    }
+}
