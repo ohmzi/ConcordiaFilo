@@ -1,5 +1,5 @@
 <ion-card>
-    <div class="panel-heading">List of Files {{pageName}} </div>
+    <ion-card-header class="panel-heading">List of Files For {{pageName}} </ion-card-header>
     <div *ngFor="let file of fileUploads">
         <div class="panel-body">
             <app-details-upload [fileUpload]='file'></app-details-upload>

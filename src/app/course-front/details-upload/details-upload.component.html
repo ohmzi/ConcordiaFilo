@@ -1,10 +1,11 @@
-<ion-list>
+<ion-list class="ion-activatable">
     <ion-item-sliding>
-        <ion-item (click)="selectVal(fileUpload.url)">
+        <ion-item (click)="selectVal(fileUpload.url)" text-float="center">
             {{fileUpload.name}}
+            <ion-ripple-effect></ion-ripple-effect>
         </ion-item>
         <ion-item-options side="end">
-            <ion-item-option>Unread</ion-item-option>
+            <ion-item-option>Download</ion-item-option>
         </ion-item-options>
     </ion-item-sliding>
 </ion-list>

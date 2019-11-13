@@ -32,9 +32,9 @@ export class SearchComponentComponent {
     }
   }
   selectVal(courseSelection) {
-    // alert("you have selected = " + val);
-    this;
+    //alert("you have selected = " + courseSelection);
     this.course.name = courseSelection;
+    courseSelection="";
     console.log("course Name is " + this.course.name);
     this._store.course = this.course;
     this.router.navigate(["/course-front"]);

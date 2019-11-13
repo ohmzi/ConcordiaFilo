@@ -1,14 +1,13 @@
 <ion-header>
     <ion-toolbar color="primary">
         <ion-title>{{course.name}}</ion-title>
+        <ion-button color="dark" routerLink="/">Home
+        </ion-button>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="container" style="width:400px">
+    <div class="container" style="width:350px">
         <app-list-upload [pageName]=course.name></app-list-upload>
     </div>
 </ion-content>
-
-<ion-button color="dark" routerLink="/">Home
-</ion-button>
