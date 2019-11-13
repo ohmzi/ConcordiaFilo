@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FileUpload } from "../fileupload";
 import { CourseFrontPage } from "../course-front.page";
-import { Store } from "../../store/store";
 import { Router } from "@angular/router";
 import { File } from "@ionic-native/File/ngx";
 import { FileTransfer } from "@ionic-native/file-transfer/ngx";
@@ -30,7 +29,6 @@ export class DetailsUploadComponent implements OnInit {
     private file: File,
     private uploadService: CourseFrontPage,
     public router: Router,
-    private readonly _store: Store
   ) {}
 
   ngOnInit() {}

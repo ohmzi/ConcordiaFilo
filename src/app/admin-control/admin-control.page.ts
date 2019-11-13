@@ -1,6 +1,5 @@
 import { Component, OnInit, Injectable, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Store } from "../store/store";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { FileUpload } from "./fileupload";
@@ -19,7 +18,6 @@ export class AdminControlPage {
   course: any;
   private basePath = "/Courses/Math 205";
   constructor(
-    private readonly _store: Store,
     private db: AngularFireDatabase,
     private storage: AngularFireStorage
   ) {

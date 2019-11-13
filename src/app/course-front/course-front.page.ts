@@ -1,6 +1,5 @@
-import { Component, OnInit, Injectable, Input } from "@angular/core";
+import { Component, OnInit, Injectable, Input} from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Store } from "../store/store";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
 import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
@@ -19,17 +18,16 @@ import { finalize } from "rxjs/operators";
   styleUrls: ["./course-front.page.scss"]
 })
 export class CourseFrontPage {
-  course: any;
+  course: string="";
   private basePath = "";
+  searchComponentBoolean: boolean = true;
+  listComponentBoolean: boolean = false;
 
   constructor(
-    private readonly _store: Store,
     private db: AngularFireDatabase,
     private storage: AngularFireStorage
   ) {
     // debugger;
-    this.course = this._store.course;
-    this.basePath = "/Courses/" + this.course.name;
   }
   pushFileToStorage(fileUpload: FileUpload): Observable<number> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -76,5 +74,20 @@ export class CourseFrontPage {
   private deleteFileStorage(name: string) {
     const storageRef = this.storage.ref(this.basePath);
     storageRef.child(name).delete();
+  }
+
+  receiveCourseName(courseNameBeingSent) {
+   // this._store.course = courseNameBeingSent;
+    console.log("course Name is LALAL ", courseNameBeingSent);
+    this.course=courseNameBeingSent;
+    this.basePath = "/Courses/" + courseNameBeingSent;
+    this.searchComponentBoolean = false;
+    this.listComponentBoolean = true;
+    console.log(this.searchComponentBoolean);
+  }
+
+  reset(){
+    this.listComponentBoolean = false;
+    this.searchComponentBoolean = true;
   }
 }

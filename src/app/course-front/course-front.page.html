@@ -1,13 +1,17 @@
 <ion-header>
     <ion-toolbar color="primary">
-        <ion-title>{{course.name}}</ion-title>
-        <ion-button color="dark" routerLink="/">Home
+        <ion-title></ion-title>
+        <ion-button (click)="reset()" color="dark">Home
         </ion-button>
     </ion-toolbar>
 </ion-header>
+<ion-content *ngIf="searchComponentBoolean">
+    <app-search-component (courseNameEvent)="receiveCourseName($event)"></app-search-component>
+</ion-content>
+<ion-content *ngIf="listComponentBoolean">
 
-<ion-content>
-    <div class="container" style="width:350px">
-        <app-list-upload [pageName]=course.name></app-list-upload>
-    </div>
+    <div class="container"  style="width:350px">
+
+        <app-list-upload [pageName]=course></app-list-upload>
+            </div>
 </ion-content>

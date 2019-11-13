@@ -8,7 +8,7 @@ import { DetailsUploadComponent } from "./details-upload/details-upload.componen
 import { IonicModule } from "@ionic/angular";
 
 import { CourseFrontPage } from "./course-front.page";
-import { StoreModule } from "../store/store.module";
+import { SearchComponentComponent } from '../search-component/search-component.component';
 
 const routes: Routes = [
   {
@@ -19,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    SearchComponentComponent,
     CourseFrontPage,
     ListUploadComponent,
     DetailsUploadComponent

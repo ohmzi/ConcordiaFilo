@@ -1,6 +1,5 @@
-import { Component, Injectable } from "@angular/core";
+import { Component, Injectable ,Output,EventEmitter} from "@angular/core";
 import { Router } from "@angular/router";
-import { Store } from "../store/store";
 
 @Injectable({
   providedIn: "root"
@@ -12,10 +11,12 @@ import { Store } from "../store/store";
   styleUrls: ["./search-component.component.scss"]
 })
 export class SearchComponentComponent {
+    @Output() courseNameEvent = new EventEmitter<string>();
+
   isItemAvailable = false;
   course = { name: "as" };
   courseList: any = [];
-  constructor(public router: Router, private readonly _store: Store) {
+  constructor(public router: Router) {
     this.intitializeCourseList();
   }
 
@@ -34,9 +35,10 @@ export class SearchComponentComponent {
   selectVal(courseSelection) {
     //alert("you have selected = " + courseSelection);
     this.course.name = courseSelection;
-    courseSelection="";
+    //courseSelection="";
     console.log("course Name is " + this.course.name);
-    this._store.course = this.course;
+     this.courseNameEvent.emit(courseSelection);
+
     this.router.navigate(["/course-front"]);
   }
 

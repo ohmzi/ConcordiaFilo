@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
-  { path: "", redirectTo: "search", pathMatch: "full" },
+  { path: "", redirectTo: "course-front", pathMatch: "full" },
   {
     path: "login",
     loadChildren: "./login/login.module#LoginPageModule"
@@ -14,10 +14,6 @@ const routes: Routes = [
   {
     path: "admin-control",
     loadChildren: "./admin-control/admin-control.module#AdminControlPageModule"
-  },
-  {
-    path: "search",
-    loadChildren: "./search/search.module#SearchPageModule"
   }
 ];
 
