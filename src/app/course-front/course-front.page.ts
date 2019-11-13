@@ -39,7 +39,7 @@ export class CourseFrontPage {
       .pipe(
         finalize(() => {
           storageRef.getDownloadURL().subscribe(downloadURL => {
-            console.log("File available at", downloadURL);
+          //  console.log("File available at", downloadURL);
             fileUpload.url = downloadURL;
             fileUpload.name = fileUpload.file.name;
             this.saveFileData(fileUpload);
@@ -78,12 +78,12 @@ export class CourseFrontPage {
 
   receiveCourseName(courseNameBeingSent) {
    // this._store.course = courseNameBeingSent;
-    console.log("course Name is LALAL ", courseNameBeingSent);
+   // console.log("course Name is LALAL ", courseNameBeingSent);
     this.course=courseNameBeingSent;
     this.basePath = "/Courses/" + courseNameBeingSent;
     this.searchComponentBoolean = false;
     this.listComponentBoolean = true;
-    console.log(this.searchComponentBoolean);
+   // console.log(this.searchComponentBoolean);
   }
 
   reset(){

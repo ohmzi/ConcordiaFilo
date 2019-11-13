@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: "admin-control",
     loadChildren: "./admin-control/admin-control.module#AdminControlPageModule"
-  }
+  },
 ];
 
 @NgModule({
