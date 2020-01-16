@@ -4,6 +4,13 @@
 /** Ionic CSS Variables **/
 
 :root {
+    /** Concordia Red **/
+    --ion-color-concordia-red: #8A0037;
+    --ion-color-concordia-red-rgb: 138, 0, 55;
+    --ion-color-concordia-red-contrast: #ffffff;
+    --ion-color-concordia-red-contrast-rgb: 255, 255, 255;
+    --ion-color-concordia-red-shade: #790030;
+    --ion-color-concordia-red-tint: #961a4b;
     /** primary **/
     --ion-color-primary: #3880ff;
     --ion-color-primary-rgb: 56, 128, 255;
@@ -199,4 +206,14 @@ body.dark {
     --ion-item-background: #1a1b1e;
     --color-toolbar-background: black;
     --color-toolbar-text: white;
+}
+
+//Concordia Colours
+.ion-color-concordia-red {
+    --ion-color-base: var(--ion-color-concordia-red);
+    --ion-color-base-rgb: var(--ion-color-concordia-red-rgb);
+    --ion-color-contrast: var(--ion-color-concordia-red-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-concordia-red-contrast-rgb);
+    --ion-color-shade: var(--ion-color-concordia-red-shade);
+    --ion-color-tint: var(--ion-color-concordia-red-tint);
 }

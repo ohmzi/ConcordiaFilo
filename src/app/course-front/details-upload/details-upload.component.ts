@@ -35,7 +35,7 @@ export class DetailsUploadComponent implements OnInit {
 
 
   selectVal(courseSelection) {
-    console.log("URL IN PDF PAGE IS " + courseSelection);
+   // console.log("URL IN PDF PAGE IS " + courseSelection);
     let downloadUrl = courseSelection;
     let path = this.file.dataDirectory;
     const transfer = this.ft.create();

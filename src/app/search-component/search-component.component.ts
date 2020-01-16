@@ -1,20 +1,19 @@
-import { Component, Injectable ,Output,EventEmitter} from "@angular/core";
+import { Component, Injectable, Output, EventEmitter } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
-
 @Component({
   selector: "app-search-component",
   templateUrl: "./search-component.component.html",
   styleUrls: ["./search-component.component.scss"]
 })
 export class SearchComponentComponent {
-    @Output() courseNameEvent = new EventEmitter<string>();
+  @Output() courseNameEvent = new EventEmitter<string>();
 
   isItemAvailable = false;
-  course = { name: "as" };
+ course = { name: "Place Holder" };
   courseList: any = [];
   constructor(public router: Router) {
     this.intitializeCourseList();
@@ -36,8 +35,8 @@ export class SearchComponentComponent {
     //alert("you have selected = " + courseSelection);
     this.course.name = courseSelection;
     //courseSelection="";
-    console.log("course Name is " + this.course.name);
-     this.courseNameEvent.emit(courseSelection);
+    //console.log("course Name is " + this.course.name);
+    this.courseNameEvent.emit(courseSelection);
 
     this.router.navigate(["/course-front"]);
   }
@@ -48,16 +47,13 @@ export class SearchComponentComponent {
         name: "Math 203"
       },
       {
-        name: "Math 204"
+        name: "Mark 201 & Comm 223"
       },
       {
-        name: "Math 205"
+        name: "Econ 201"
       },
       {
-        name: "Geog 204"
-      },
-      {
-        name: "Geog 210"
+        name: "Econ 203"
       }
     ];
   }
