@@ -1,21 +1,3 @@
-/* section {
-    background-color: rgba(0, 0, 0, 0.701961);
-    width: 400px;
-    height: 400px;
+.button:hover {
+    --background-hover: blue
 }
-
-div {
-    position: absolute;
-    top: 120px;
-    left: 120px;
-    width: 160px;
-    height: 160px;
-    background-color: red;
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-}
-
-div:hover {
-    -webkit-transform: scale(1.8) rotate(0.01deg);
-    transform: scale(1.8) rotate(0.01deg);
-} */

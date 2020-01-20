@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Component } from "@angular/core";
+import { Platform } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['./app.component.css']
-
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
   constructor(
@@ -15,7 +14,6 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
-    
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -33,8 +31,12 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      if (this.platform.is("android")) {
+       this.statusBar.overlaysWebView(true);
+        this.statusBar.backgroundColorByHexString("#33000000");
+      }
     });
+
+    this.splashScreen.hide();
   }
 }
