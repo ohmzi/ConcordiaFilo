@@ -1,10 +1,10 @@
-import { Component, OnInit, Injectable, Input} from "@angular/core";
+import { Component, OnInit, Injectable, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
 import { DetailsUploadComponent } from "./details-upload/details-upload.component";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { AngularFireStorage } from "@angular/fire/storage";
-
+import anime from "animejs/lib/anime.es.js";
 import { FileUpload } from "./fileupload";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
@@ -18,10 +18,9 @@ import { finalize } from "rxjs/operators";
   styleUrls: ["./course-front.page.scss"]
 })
 export class CourseFrontPage {
-  course: string="";
+  course: string = "";
   private basePath = "";
   searchComponentBoolean: boolean = true;
-  listComponentBoolean: boolean = false;
 
   constructor(
     private db: AngularFireDatabase,
@@ -39,7 +38,7 @@ export class CourseFrontPage {
       .pipe(
         finalize(() => {
           storageRef.getDownloadURL().subscribe(downloadURL => {
-            console.log("File available at", downloadURL);
+            //  console.log("File available at", downloadURL);
             fileUpload.url = downloadURL;
             fileUpload.name = fileUpload.file.name;
             this.saveFileData(fileUpload);
@@ -77,17 +76,15 @@ export class CourseFrontPage {
   }
 
   receiveCourseName(courseNameBeingSent) {
-   // this._store.course = courseNameBeingSent;
-    console.log("course Name is LALAL ", courseNameBeingSent);
-    this.course=courseNameBeingSent;
+    // this._store.course = courseNameBeingSent;
+    // console.log("course Name is LALAL ", courseNameBeingSent);
+    this.course = courseNameBeingSent;
     this.basePath = "/Courses/" + courseNameBeingSent;
     this.searchComponentBoolean = false;
-    this.listComponentBoolean = true;
-    console.log(this.searchComponentBoolean);
+    // console.log(this.searchComponentBoolean);
   }
 
-  reset(){
-    this.listComponentBoolean = false;
+  reset() {
     this.searchComponentBoolean = true;
   }
 }
