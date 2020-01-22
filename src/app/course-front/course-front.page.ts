@@ -24,7 +24,7 @@ export class CourseFrontPage {
 
   constructor(
     private db: AngularFireDatabase,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
   ) {
     // debugger;
   }

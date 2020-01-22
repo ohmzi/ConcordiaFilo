@@ -1,26 +1,17 @@
-<ion-header>
-    <ion-toolbar color="primary">
-        <ion-title>Admin Page</ion-title>
-        <ion-grid>
-            <ion-row>
-                <ion-col size="6">
-                    <ion-button routerLink="/" fill="outline" color="dark" float="left">Home
-                    </ion-button>
-                </ion-col>
-                <ion-col size="3" offset="3">
-                    <ion-button></ion-button>
-                </ion-col>
-            </ion-row>
-
-        </ion-grid>
+<ion-header style="background-color: red;">
+    <ion-toolbar color="red" style="background: red; top: 60%; height:min-content;">
+        <ion-button routerLink="/" fill="outline" color="dark">Home</ion-button>
+        <ion-title style="position:relative ; color: black;">Admin Page</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="top: 10%;">
     <ion-card>
         <ion-header>Please upload the desired file here: </ion-header>
-        <div class="container" style="width:400px">
-            <app-form-upload></app-form-upload>
-        </div>
+
+        <app-form-upload class="container" style="width:400px">
+
+        </app-form-upload>
+
     </ion-card>
 </ion-content>

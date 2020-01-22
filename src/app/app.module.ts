@@ -19,7 +19,9 @@ import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { HttpClientModule } from "@angular/common/http";
 import anime from 'animejs/lib/anime.es.js';
-
+import {
+  AdMobFree
+} from "@ionic-native/admob-free/ngx";
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -38,7 +40,7 @@ import anime from 'animejs/lib/anime.es.js';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,AdMobFree,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     HTTP,
     File,

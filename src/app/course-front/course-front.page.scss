@@ -1,3 +1,14 @@
-.button:hover {
-    --background-hover: blue
+.header {
+    background: whtie;
+    box-shadow: none;
+}
+
+.search-bar {
+    background: blue;
+    box-shadow: none;
+}
+
+.search-bar:hover .header {
+    transition: 0.4s;
+    transform: translate(40px, -40px);
 }

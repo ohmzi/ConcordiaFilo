@@ -30,10 +30,11 @@ export class AppComponent {
   }
 
   initializeApp() {
+    this.statusBar.styleLightContent();
     this.platform.ready().then(() => {
       if (this.platform.is("android")) {
        this.statusBar.overlaysWebView(true);
-        this.statusBar.backgroundColorByHexString("#33000000");
+       this.statusBar.styleLightContent();
       }
     });
 
