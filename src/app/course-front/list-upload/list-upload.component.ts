@@ -7,7 +7,7 @@ import {
   AdMobFreeInterstitialConfig
 } from "@ionic-native/admob-free/ngx";
 import { CourseFrontPage } from "../course-front.page";
-
+import { adMobVal } from "../../adMob/adMob";
 @Component({
   selector: "app-list-upload",
   templateUrl: "./list-upload.component.html",
@@ -24,22 +24,7 @@ export class ListUploadComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    {
-      const bannerConfig: AdMobFreeBannerConfig = {
-        // add your config here
-        // for the sake of this example we will just use the test config
-        isTesting: true,
-        autoShow: true
-      };
-      this.admobFree.banner.config(bannerConfig);
-      this.admobFree.banner
-        .prepare()
-        .then(() => {
-          // banner Ad is ready
-          // if we set autoShow to false, then we will need to call the show method here
-        })
-        .catch(e => console.log(e));
-    }
+    this.interstitialAd();
 
     // Use snapshotChanges().pipe(map()) to store the key
     this.uploadService
@@ -56,14 +41,15 @@ export class ListUploadComponent implements OnInit {
   }
   interstitialAd() {
     const interstitialConfig: AdMobFreeInterstitialConfig = {
-      // add your config here
-      // for the sake of this example we will just use the test config
-      id:'ca-app-pub-9743851463613820/9759476692',
+      id: adMobVal.apiKey,
       isTesting: false,
       autoShow: true
     };
     this.admobFree.interstitial.config(interstitialConfig);
 
-    this.admobFree.interstitial.prepare().catch(e => console.log(e));
+    this.admobFree.interstitial
+      .prepare()
+      .then(() => {})
+      .catch(e => console.log(e));
   }
 }

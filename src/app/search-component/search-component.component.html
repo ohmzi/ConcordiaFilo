@@ -1,6 +1,6 @@
-<ion-content style="box-shadow: none;">
+<ion-content >
 
-    <div class="search-icon" style="box-shadow: none;">
+    <div class="search-icon">
         <ion-searchbar class="search-bar" color="none" [animated]="false" placeholder="Course Name" (ionInput)="CreateCourseList($event)" ionCancel="onCancel($event)" autocomplete="on($event)" style="box-shadow: none;" ></ion-searchbar>
     </div>
     <ion-list *ngIf="isItemAvailable" class="list-style">

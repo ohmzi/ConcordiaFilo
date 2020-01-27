@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="Concordia.Filo" version="5.2.0.1">
+<widget id="com.ohmz.concordia_filo" version="1.0">
     <name>Concordia Filo</name>
     <description>A repository of Concordia previous exams.</description>
-    <author email="o_iqbal@live.concordia.ca">Omar Iqbal</author>
+    <author email="m.omar.i@outlook.com">Omar I</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

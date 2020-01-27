@@ -37,7 +37,6 @@
         "cordova-admob-sdk": "0.24.1",
         "cordova-android": "^8.1.0",
         "cordova-browser": "^6.0.0",
-        "cordova-ios": "5.0.1",
         "cordova-plugin-admob-free": "0.27.0",
         "cordova-plugin-advanced-http": "^2.3.1",
         "cordova-plugin-document-viewer": "^0.9.13",
@@ -108,12 +107,11 @@
             "cordova-plugin-advanced-http": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-admob-free": {
-                "ADMOB_APP_ID": "ca-app-pub-9743851463613820/9759476692"
+                "ADMOB_APP_ID": "ca-app-pub-9743851463613820/6373645897"
             }
         },
         "platforms": [
             "browser",
-            "ios",
             "android"
         ]
     }

@@ -1,14 +1,55 @@
-.header {
-    background: whtie;
-    box-shadow: none;
-}
 
-.search-bar {
-    background: blue;
-    box-shadow: none;
-}
 
-.search-bar:hover .header {
+.button-home {
+    position: absolute;
+    left: 5%;
+    bottom: 700%;
+    margin-bottom: 250px;
+    background-color: rgba(0, 0, 0, 0.5);
+    --border-color: rgba(255, 255, 255, 1);
+    --color-activated:rgba(255, 255, 255, 1);
+    --color	:rgba(255, 255, 255, 1);
+    --color-hover	:rgba(255, 255, 255, 1);
+    --background-activated	:rgba(255, 255, 255, 0.5);
+}
+  
+
+.button-login {
+    position: absolute;
+    right: 5%;
+    bottom: 700%;
+    margin-bottom: 250px;
+  //  padding: 10px 20px;
+  background-color: rgba(102, 61, 0, 0.5)
+  //color:light;
+
+  }
+
+  .button-home:active {
+    background-color: rgba(56, 89, 255, 0.48);
+   }
+
+  .header{
+  //  margin-top: 0px;
+  }
+
+.searchbar-ion-content{
+ 
+    color: blue;
     transition: 0.4s;
-    transform: translate(40px, -40px);
+}
+
+.searchbar-ion-content:hover{
+    transform: translate(0, -40%);
+
+}
+
+
+.searchbar-ion-content:hover .header{
+    transform: translate(0, -60%);
+
+}
+.app-list-upload{
+    position: absolute;
+    top: 20%;
 }
