@@ -18,10 +18,10 @@ import { FileTransfer } from "@ionic-native/file-transfer/ngx";
 import { DocumentViewer } from "@ionic-native/document-viewer/ngx";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { HttpClientModule } from "@angular/common/http";
-import anime from 'animejs/lib/anime.es.js';
-import {
-  AdMobFree
-} from "@ionic-native/admob-free/ngx";
+import anime from "animejs/lib/anime.es.js";
+import { AdMobFree } from "@ionic-native/admob-free/ngx";
+import { Toast } from '@ionic-native/toast/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -40,13 +40,14 @@ import {
   ],
   providers: [
     StatusBar,
-    SplashScreen,AdMobFree,
+    SplashScreen,
+    AdMobFree,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     HTTP,
     File,
     FileOpener,
     FileTransfer,
-    DocumentViewer
+    DocumentViewer,Toast
   ]
 })
 export class AppModule {}

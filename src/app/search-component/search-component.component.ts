@@ -47,6 +47,36 @@ export class SearchComponentComponent {
         name: "Math 203"
       },
       {
+        name: "Math 204"
+      },
+      {
+        name: "Math 205"
+      },
+      {
+        name: "Math 208"
+      },
+      {
+        name: "Math 209"
+      },
+      {
+        name: "Btm 200"
+      },
+      {
+        name: "Phys 204"
+      },
+      {
+        name: "Phys 205"
+      },
+      {
+        name: "Phys 206"
+      },
+      {
+        name: "Chem 205"
+      },
+      {
+        name: "Chem 206"
+      },
+      {
         name: "Mark 201 & Comm 223"
       },
       {

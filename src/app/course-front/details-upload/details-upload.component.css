@@ -25,3 +25,8 @@
         background: black;
     }
 }
+
+.ion-activatable {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}

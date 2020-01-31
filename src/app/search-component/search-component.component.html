@@ -1,11 +1,13 @@
-<ion-content >
+<ion-content class="box">
 
     <div class="search-icon">
-        <ion-searchbar class="search-bar" color="none" [animated]="false" placeholder="Course Name" (ionInput)="CreateCourseList($event)" ionCancel="onCancel($event)" autocomplete="on($event)" style="box-shadow: none;" ></ion-searchbar>
+        <ion-searchbar class="search-bar" color="none" [animated]="false" placeholder="Course Name" (ionInput)="CreateCourseList($event)" ionCancel="onCancel($event)" autocomplete="on($event)" style="box-shadow: none;"></ion-searchbar>
     </div>
     <ion-list *ngIf="isItemAvailable" class="list-style">
         <ion-item class="ion-activatable" colour="success" (click)="selectVal(course.name)" *ngFor="let course of courseList">
-            {{course.name}}
+            <div class="ion-text-center">
+                <h5> {{course.name}}</h5>
+            </div>
             <ion-ripple-effect></ion-ripple-effect>
         </ion-item>
     </ion-list>

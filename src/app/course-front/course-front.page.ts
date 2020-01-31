@@ -1,3 +1,5 @@
+import { Toast } from "@ionic-native/toast/ngx";
+import { adMobVal } from "./../adMob/adMob";
 import { Component, OnInit, Injectable, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ListUploadComponent } from "./list-upload/list-upload.component";
@@ -8,7 +10,7 @@ import anime from "animejs/lib/anime.es.js";
 import { FileUpload } from "./fileupload";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
-
+import { AdMobFree, AdMobFreeBannerConfig } from "@ionic-native/admob-free/ngx";
 @Injectable({
   providedIn: "root"
 })
@@ -17,16 +19,56 @@ import { finalize } from "rxjs/operators";
   templateUrl: "./course-front.page.html",
   styleUrls: ["./course-front.page.scss"]
 })
-export class CourseFrontPage {
+export class CourseFrontPage implements OnInit {
   course: string = "";
   private basePath = "";
   searchComponentBoolean: boolean = true;
 
   constructor(
+    private admobFree: AdMobFree,
     private db: AngularFireDatabase,
     private storage: AngularFireStorage,
+    private toast: Toast
   ) {
     // debugger;
+  }
+  ngOnInit() {
+    this.bannerAd();
+    this.infoBanner();
+  }
+
+  infoBanner() {
+    this.toast
+      .showWithOptions({
+        message: "Please enter Course Code in the Searchbar.",
+        duration: 10000,
+        position: "top",
+        addPixelsY: 100,
+        styling: {
+          opacity: 0.75, // 0.0 (transparent) to 1.0 (opaque). Default 0.8
+          backgroundColor: "#000000", // make sure you use #RRGGBB. Default #333333
+          textColor: "#ffffff", // Ditto. Default #FFFFFF
+          cornerRadius: 50, // minimum is 0 (square). iOS default 20, Android default 100
+          horizontalPadding: 100, // iOS default 16, Android default 50
+          verticalPadding: 150 // iOS default 12, Android default 30
+        }
+      })
+      .subscribe(toast => {
+        console.log(toast);
+      });
+  }
+  bannerAd() {
+    const bannerConfig: AdMobFreeBannerConfig = {
+      id:adMobVal.bannerApiKey,// "ca-app-pub-3940256099942544/6300978111", //
+      isTesting: false,
+      autoShow: true
+    };
+    this.admobFree.banner.config(bannerConfig);
+
+    this.admobFree.banner
+      .prepare()
+      .then(() => {})
+      .catch(e => console.log(e));
   }
   pushFileToStorage(fileUpload: FileUpload): Observable<number> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;

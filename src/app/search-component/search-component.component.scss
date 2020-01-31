@@ -38,7 +38,6 @@
     padding: 0;
     color: black;
     overflow: hidden;
-
     background: rgba(255, 72, 72, 0.397);
     --placeholder-opacity: 100;
     --placeholder-font-weight: 500;
@@ -46,12 +45,27 @@
     line-height: 30px;
     border-radius: 40px;
     box-shadow: none;
-    text-align: center
+    text-align: center;
 }
 
 .list-style {
     margin: 21%;
+    padding-bottom: 0%;
 }
+
+.box {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.ion-activatable {
+    padding-bottom: 0%;
+}
+
+.ion-text-center {
+    padding-bottom: 0%;
+}
+
 
 /*
 

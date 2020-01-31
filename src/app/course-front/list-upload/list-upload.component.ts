@@ -41,7 +41,7 @@ export class ListUploadComponent implements OnInit {
   }
   interstitialAd() {
     const interstitialConfig: AdMobFreeInterstitialConfig = {
-      id: adMobVal.apiKey,
+      id: adMobVal.interstitialApiKey,
       isTesting: false,
       autoShow: true
     };
