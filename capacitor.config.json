@@ -1,21 +1,26 @@
 {
-  "appId": "com.example.app",
-  "appName": "ConcordiaFilo",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {
-    "preferences": {
-      "StatusBarOverlaysWebView": "true",
-      "StatusBarBackgroundColor": "#33000000",
-      "ScrollEnabled": "false",
-      "android-minSdkVersion": "19",
-      "BackupWebStorage": "none",
-      "SplashMaintainAspectRatio": "true",
-      "FadeSplashScreenDuration": "300",
-      "SplashShowOnlyFirstTime": "false",
-      "SplashScreen": "screen",
-      "SplashScreenDelay": "3000"
+    "appId": "com.ohmz.concordia.filo",
+    "appName": "Concordia Filo",
+    "description": "A repository of Concordia previous exams.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/omar300/ConcordiaFilo"
+    },
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www",
+    "cordova": {
+        "preferences": {
+            "StatusBarOverlaysWebView": "true",
+            "StatusBarBackgroundColor": "#33000000",
+            "ScrollEnabled": "false",
+            "android-minSdkVersion": "19",
+            "BackupWebStorage": "none",
+            "SplashMaintainAspectRatio": "true",
+            "FadeSplashScreenDuration": "300",
+            "SplashShowOnlyFirstTime": "false",
+            "SplashScreen": "screen",
+            "SplashScreenDelay": "3000"
+        }
     }
-  }
 }

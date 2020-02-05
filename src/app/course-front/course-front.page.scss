@@ -2,8 +2,7 @@
     position: absolute;
     left: 5%;
     bottom: 700%;
-    margin-bottom: 250px;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 200px;
     --border-color: rgba(255, 255, 255, 1);
     --color-activated: rgba(255, 255, 255, 1);
     --color: rgba(255, 255, 255, 1);
@@ -12,36 +11,30 @@
 }
 
 .button-login {
+    overflow: hidden;
     position: absolute;
     right: 5%;
     bottom: 700%;
-    margin-bottom: 250px;
-    //  padding: 10px 20px;
-    background-color: rgba(102, 61, 0, 0.5) //color:light;
-}
-
-.button-home:active {
-    background-color: rgba(56, 89, 255, 0.48);
-}
-
-.header {
-    //  margin-top: 0px;
+    margin-bottom: 200px;
+    //padding: 10px 20px;
+    //background-color: rgba(102, 61, 0, 0.5) //color:light;
 }
 
 .searchbar-ion-content {
-    color: blue;
-    transition: 0.4s;
+    position: absolute;
+    top: 43%;
+    transition: 0.4s ease-in;
 }
 
 .searchbar-ion-content:hover {
-    transform: translate(0, -40%);
+    transform: translate(0, -30%);
 }
 
 .searchbar-ion-content:hover .header {
-    transform: translate(0, -80%);
+    transform: translate(0, -50%);
 }
 
 .app-list-upload {
     position: absolute;
-    top: 20%;
+    top: 13%;
 }

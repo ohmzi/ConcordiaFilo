@@ -1,16 +1,15 @@
-<div class="header">
+<div>
     <img src="/assets/bg.jpg" />
-    <!--           <ion-title *ngIf="searchComponentBoolean">Home</ion-title> 
-              <ion-title *ngIf="!searchComponentBoolean">Repository</ion-title> -->
 
+    <!--      <ion-title *ngIf="searchComponentBoolean">Home</ion-title> 
+              <ion-title *ngIf="!searchComponentBoolean">Repository</ion-title> -->
     <ion-grid>
         <ion-row>
             <ion-col size="6">
-                <ion-button class="button-home" *ngIf="!searchComponentBoolean" (click)="reset()" fill="outline" float="left">Home
+                <ion-button class="button-home" *ngIf="!searchComponentBoolean" (click)="reset()" color="dark" float="left">Home
                 </ion-button>
             </ion-col>
             <ion-col size="3" offset="3">
-
                 <!--   <ion-button class="button-login" routerLink="/login" color="danger" fill="outline" float="right">Login
                 </ion-button> -->
                 <ion-button class="button-login" float="right" (click)="infoBanner()">Info</ion-button>
@@ -20,15 +19,11 @@
     </ion-grid>
 </div>
 
-
-
-
 <ion-content *ngIf="searchComponentBoolean" class="searchbar-ion-content">
     <app-search-component (courseNameEvent)="receiveCourseName($event)"></app-search-component>
 </ion-content>
 
 <ion-content *ngIf="!searchComponentBoolean" class="app-list-upload">
-    <div class="container"  style="width:350px">
-        <app-list-upload [pageName]=course></app-list-upload>
-            </div>
+    <!-- <div class="container"  style="width:350px; height: 1000px;"> -->
+    <app-list-upload [pageName]=course></app-list-upload>
 </ion-content>
