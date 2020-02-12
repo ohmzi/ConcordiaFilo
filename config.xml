@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ohmz.concordiafilo" version="1.4">
+<widget id="com.ohmz.concordia.filo" version="1.4">
     <name>Concordia Filo</name>
     <description>A repository of Concordia previous exams.</description>
     <author email="m.omar.i@outlook.com">Omar I</author>
@@ -98,9 +98,9 @@
         <splash height="1242" src="resources/ios/splash/Default-Landscape-2688h~iphone.png" width="2688" />
         <splash height="1792" src="resources/ios/splash/Default-1792h~iphone.png" width="828" />
         <splash height="828" src="resources/ios/splash/Default-Landscape-1792h~iphone.png" width="1792" />
-        <string parent="GADApplicationIdentifier" target="*-Info.plist">
+        <config-file parent="GADApplicationIdentifier" target="*-Info.plist">
             <string>ca-app-pub-9743851463613820~3500070540</string>
-        </string>
+        </config-file>
     </platform>
     <plugin name="cordova-plugin-document-viewer" spec="^0.9.13" />
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
@@ -113,11 +113,4 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.2.0" />
     <plugin name="cordova-plugin-advanced-http" spec="^2.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
-    <plugin name="cordova-plugin-admobpro" spec="^2.49.0">
-        <variable name="ADMOB_APP_ID" value="ca-app-pub-9743851463613820~3500070540" />
-        <variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
-    </plugin>
-    <plugin name="cordova-plugin-admob-free" spec="^0.27.0">
-        <variable name="ADMOB_APP_ID" value="ca-app-pub-9743851463613820~3500070540" />
-    </plugin>
 </widget>

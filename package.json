@@ -32,13 +32,10 @@
     "animejs": "^3.1.0",
     "cordova-admob-sdk": "^0.24.1",
     "cordova-admobsdk": "^7.49.0",
-    "cordova-android": "^8.1.0",
     "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-ios": "^5.1.1",
     "cordova-plugin-add-swift-support": "^2.0.2",
-    "cordova-plugin-admob-free": "^0.27.0",
-    "cordova-plugin-admobpro": "^2.49.0",
-    "cordova-plugin-extension": "^1.5.4",
+    "cordova-plugin-admob-free": "0.27.0",
     "cordova-plugin-x-toast": "^2.7.2",
     "cordova-promise-polyfill": "0.0.2",
     "firebase": "^7.8.0",
@@ -92,21 +89,16 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-advanced-http": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-admobpro": {
-        "ADMOB_APP_ID": "ca-app-pub-9743851463613820~3500070540",
-        "PLAY_SERVICES_VERSION": "16.0.0"
-      },
-      "cordova-plugin-admob-free": {
-        "ADMOB_APP_ID": "ca-app-pub-9743851463613820~3500070540"
-      },
       "cordova-plugin-x-toast": {},
       "cordova-android-support-gradle-release": {
         "ANDROID_SUPPORT_VERSION": "27.+"
+      },
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "ca-app-pub-9743851463613820~3500070540"
       }
     },
     "platforms": [
-      "ios",
-      "android"
+      "ios"
     ]
   }
 }
