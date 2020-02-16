@@ -28,6 +28,7 @@
     "@ionic-native/toast": "^5.20.0",
     "@ionic/angular": "^4.11.10",
     "@ionic/angular-toolkit": "^2.1.2",
+    "@ionic/cli": "^6.1.0",
     "angular-animate": "^1.7.9",
     "animejs": "^3.1.0",
     "cordova-admob-sdk": "^0.24.1",

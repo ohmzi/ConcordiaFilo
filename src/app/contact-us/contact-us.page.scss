@@ -1,0 +1,35 @@
+    .formcard {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    
+    .pylon {
+        height: 150px;
+        width: 150px;
+        float: left;
+    }
+    
+    .text {
+        float: right;
+    }
+    
+    .topcard {
+        position: absolute;
+        top: 10%;
+        margin-bottom: 20px;
+    }
+    
+    .bottomcard {
+        position: absolute;
+        top: 43%;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    
+    .buttongrid {
+        width: min-content;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+    }

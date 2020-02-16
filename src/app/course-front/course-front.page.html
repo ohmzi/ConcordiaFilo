@@ -1,29 +1,37 @@
 <div>
-    <img src="/assets/bg.jpg" />
+    <div>
+        <img src="/assets/bg.jpg" />
 
-    <!--      <ion-title *ngIf="searchComponentBoolean">Home</ion-title> 
+        <!--      <ion-title *ngIf="searchComponentBoolean">Home</ion-title> 
               <ion-title *ngIf="!searchComponentBoolean">Repository</ion-title> -->
-    <ion-grid>
-        <ion-row>
-            <ion-col size="6">
-                <ion-button class="button-home" *ngIf="!searchComponentBoolean" (click)="reset()" color="dark" float="left">Home
-                </ion-button>
-            </ion-col>
-            <ion-col size="3" offset="3">
-                <!--   <ion-button class="button-login" routerLink="/login" color="danger" fill="outline" float="right">Login
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-button class="button-home" *ngIf="!searchComponentBoolean" (click)="reset()" color="dark" float="left">Home
+                    </ion-button>
+
+                    <ion-button class="button-home" color="medium" *ngIf="searchComponentBoolean" routerLink="/contact-us" float="left">Help us improve the app
+                    </ion-button>
+                </ion-col>
+                <ion-col size="3" offset="3">
+                    <!--   <ion-button class="button-login" routerLink="/login" color="danger" fill="outline" float="right">Login
                 </ion-button> -->
-                <ion-button class="button-login" float="right" (click)="infoBanner()">Info</ion-button>
+                    <ion-button class="button-login" float="right" (click)="infoBanner()">How to use :(</ion-button>
 
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+    <ion-content *ngIf="searchComponentBoolean" class="searchbar-ion-content">
+        <app-search-component (courseNameEvent)="receiveCourseName($event)"></app-search-component>
+    </ion-content>
+
+    <ion-content *ngIf="!searchComponentBoolean" class="app-list-upload">
+        <!-- <div class="container"  style="width:350px; height: 1000px;"> -->
+        <app-list-upload [pageName]=course></app-list-upload>
+    </ion-content>
+
+
 </div>
-
-<ion-content *ngIf="searchComponentBoolean" class="searchbar-ion-content">
-    <app-search-component (courseNameEvent)="receiveCourseName($event)"></app-search-component>
-</ion-content>
-
-<ion-content *ngIf="!searchComponentBoolean" class="app-list-upload">
-    <!-- <div class="container"  style="width:350px; height: 1000px;"> -->
-    <app-list-upload [pageName]=course></app-list-upload>
-</ion-content>

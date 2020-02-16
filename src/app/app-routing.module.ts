@@ -15,6 +15,10 @@ const routes: Routes = [
     path: "admin-control",
     loadChildren: "./admin-control/admin-control.module#AdminControlPageModule"
   },
+  {
+    path: 'contact-us',
+    loadChildren: () => import('./contact-us/contact-us.module').then( m => m.ContactUsPageModule)
+  },
 ];
 
 @NgModule({

@@ -49,8 +49,8 @@ export class CourseFrontPage implements OnInit {
           backgroundColor: "#000000", // make sure you use #RRGGBB. Default #333333
           textColor: "#ffffff", // Ditto. Default #FFFFFF
           cornerRadius: 50, // minimum is 0 (square). iOS default 20, Android default 100
-          horizontalPadding: 100, // iOS default 16, Android default 50
-          verticalPadding: 150 // iOS default 12, Android default 30
+          horizontalPadding: 30, // iOS default 16, Android default 50
+          verticalPadding: 60 // iOS default 12, Android default 30
         }
       })
       .subscribe(toast => {

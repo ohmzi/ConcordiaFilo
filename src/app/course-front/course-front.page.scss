@@ -10,7 +10,22 @@
     --background-activated: rgba(255, 255, 255, 0.5);
 }
 
+.contactUsButtom {
+    position: absolute;
+    top: 80%;
+}
+
 .button-login {
+    overflow: hidden;
+    position: absolute;
+    right: 5%;
+    bottom: 700%;
+    margin-bottom: 200px;
+    //padding: 10px 20px;
+    //background-color: rgba(102, 61, 0, 0.5) //color:light;
+}
+
+.contact-us-button {
     overflow: hidden;
     position: absolute;
     right: 5%;
